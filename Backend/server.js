@@ -1,30 +1,30 @@
 const express = require("express");
 const fs = require("fs");
 const cors = require("cors");
+require("dotenv").config();   // 👈 ADD THIS LINE
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;  // 👈 UPDATED
 
 app.use(cors());
 app.use(express.json());
 
 const filePath = "./tasks.json";
 
-// Read tasks from file
+// Read tasks
 function readData() {
   const data = fs.readFileSync(filePath, "utf-8");
   return JSON.parse(data);
 }
 
-// Write tasks to file
+// Write tasks
 function writeData(data) {
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
 }
 
-// Get all tasks
+// Get tasks
 app.get("/tasks", (req, res) => {
-  const tasks = readData();
-  res.send(tasks);
+  res.send(readData());
 });
 
 // Add task
