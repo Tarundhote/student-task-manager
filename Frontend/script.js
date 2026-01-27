@@ -1,5 +1,5 @@
 // Backend API URL
-const api = "http://localhost:3000/tasks";
+const api = "https://student-task-manager-23ls.onrender.com/";
 
 // HTML elements
 const taskInput = document.getElementById("taskInput");
