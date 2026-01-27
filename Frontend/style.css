@@ -1,0 +1,161 @@
+/* ====== Global Reset ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ====== Body Styling ====== */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ====== App Container ====== */
+.app-container {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* ====== Heading ====== */
+.app-container h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+/* ====== Input Section ====== */
+.task-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.task-input input {
+  flex: 1;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.task-input input:focus {
+  border-color: #667eea;
+}
+
+/* ====== Add Button ====== */
+.task-input button {
+  padding: 12px 18px;
+  background-color: #667eea;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.task-input button:hover {
+  background-color: #5a67d8;
+  transform: translateY(-2px);
+}
+
+/* ====== Task List ====== */
+#taskList {
+  list-style: none;
+}
+
+/* ====== Task Item ====== */
+#taskList li {
+  background-color: #f8f9ff;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* ====== Task Text ====== */
+.task-text {
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+}
+
+/* ====== Action Buttons ====== */
+.task-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.task-actions button {
+  padding: 6px 10px;
+  font-size: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+/* Edit Button */
+.edit-btn {
+  background-color: #38a169;
+  color: #fff;
+}
+
+/* Delete Button */
+.delete-btn {
+  background-color: #e53e3e;
+  color: #fff;
+}
+
+.task-actions button:hover {
+  opacity: 0.85;
+}
+
+/* ====== Animations ====== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== Responsive Design ====== */
+@media (max-width: 480px) {
+  .app-container {
+    padding: 20px;
+  }
+
+  .task-input {
+    flex-direction: column;
+  }
+
+  .task-input button {
+    width: 100%;
+  }
+}
