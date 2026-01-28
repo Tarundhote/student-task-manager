@@ -1,51 +1,79 @@
-# Student Task Manager
+# Student Task Manager – Simple Full Stack Web Application
 
-Problem Statement -
-  This project is based on Problem 4: The "Student Task Manager" Website.  
-  The main goal of this project is to help students manage their daily homework and tasks in a simple way.
+## 1. Project Title & Goal
+Student Task Manager is a simple full-stack web application that allows students to add, view, update, and delete their daily tasks in an organized and easy way.
 
-  It is a **full-stack web application** where students can add, view, update, and delete their tasks easily.  
-  The application works as a **Single Page Application (SPA)**, which means the page does not refresh when tasks are added or updated.
+---
+
+## 2. Setup Instructions
+
+### Backend Setup
+Run the following commands in terminal:
+
+```bash
+cd backend
+npm install
+node server.js
+Backend will start at:
+
+http://localhost:3000
+Frontend Setup
+Open frontend/index.html directly in a browser
+OR
+
+Open the file using VS Code Live Server
+
+3. The Logic (How I Thought)
+Why did I choose this approach?
+I chose HTML, CSS, JavaScript, and Node.js (Express) because this project is meant to understand basic full-stack concepts clearly.
+Using a local tasks.json file instead of a database keeps the project simple and easy to understand at a student level.
+
+This approach helped me focus on:
+
+CRUD operations
+
+Frontend and backend communication using APIs
+
+Updating UI dynamically without page refresh (SPA concept)
+
+What was the hardest bug I faced, and how did I fix it?
+The hardest issue I faced was a CORS error while connecting the frontend with the backend.
+
+Problem:
+The browser was blocking requests from frontend to backend.
+
+Fix:
+I fixed this by using the cors middleware in Express:
+
+app.use(cors());
+After enabling CORS, the frontend and backend started working together correctly.
+
+4. Output Screenshots
+The screenshot below shows the working Student Task Manager application with tasks added successfully:
 
 
-## Features
-  - Add new tasks using an input box
-  - View all added tasks in a list
-  - Edit/update an existing task
-  - Delete a task when it is no longer required
-  - Tasks update dynamically without page reload
-  - Simple, clean, and responsive user interface
+This proves that:
+
+Tasks are displayed properly
+
+Edit and Delete buttons work
+
+No page refresh happens during operations
+
+5. Future Improvements
+If I had 2 more days, I would add:
+
+User login and authentication
+
+Mark tasks as completed
+
+Task due dates and reminders
+
+Use MongoDB instead of JSON for storage
+
+Light and dark theme toggle
 
 
-
-## Tech Stack
-Frontend
-  - HTML – for page structure  
-  - CSS – for styling and responsive design  
-  - JavaScript – for handling user actions and API calls  
-
-Backend
-  - Node.js – for server-side logic  
-  - Express.js – for creating REST APIs  
-
-Storage
-  - Local JSON file (`tasks.json`) is used to store tasks instead of a database
-
-
-
-## Project Flow (How the Project Works)
-
-1. The user opens the Student Task Manager website in the browser.
-2. The frontend sends a request to the backend API to fetch existing tasks.
-3. The backend reads the data from the `tasks.json` file and sends it back to the frontend.
-4. When the user adds a new task:
-   - The task is sent from frontend to backend using a POST request.
-   - The backend saves the task in the JSON file.
-   - The updated task list is shown instantly without refreshing the page.
-5. When the user edits a task:
-   - A PUT request is sent to the backend with updated task data.
-   - The backend updates the task in the JSON file.
-6. When the user deletes a task:
    - A DELETE request is sent to the backend.
    - The task is removed from the JSON file.
 7. All CRUD operations happen dynamically using JavaScript and Fetch API.
