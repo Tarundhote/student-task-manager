@@ -2,36 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Student Task Manager</title>
 
-  <!-- CSS File Link -->
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Main Container -->
-  <div class="app-container">
-    <h1>📚 Student Task Manager</h1>
-    <p class="subtitle">Manage your daily homework & tasks easily</p>
+  <div class="page-wrapper">
+    <div class="app-container">
 
-    <!-- Task Input Section -->
-    <div class="task-input">
-      <input 
-        type="text" 
-        id="taskInput" 
-        placeholder="Enter your task here..."
-      />
-      <button id="addTaskBtn">Add Task</button>
+      <!-- Header -->
+     <div class="header-box">
+  <h1>Student Task Manager</h1>
+  <p class="subtitle">Organize your daily tasks easily</p>
+</div>
+      <!-- Input Section (UNCHANGED IDs) -->
+      <div class="task-input">
+        <input
+          type="text"
+          id="taskInput"
+          placeholder="Enter your task here..."
+        />
+        <button id="addTaskBtn">Add</button>
+      </div>
+
+      <!-- Task List (UNCHANGED ID) -->
+      <ul id="taskList">
+        <!-- Tasks added by JS -->
+      </ul>
+
     </div>
-
-    <!-- Task List Section -->
-    <ul id="taskList">
-      <!-- Tasks will be added dynamically using JavaScript -->
-    </ul>
   </div>
 
-  <!-- JavaScript File Link -->
+  <!-- JS -->
   <script src="script.js"></script>
 </body>
 </html>
